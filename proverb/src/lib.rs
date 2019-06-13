@@ -4,13 +4,13 @@ pub fn build_proverb(list: &[&str]) -> String {
     let mut proverb = String::new();
     let mut last_word = list[0];
 
-    for item in list.iter().skip(1) {
+    for word in list.iter().skip(1) {
         proverb += format!(
             "For want of a {} the {} was lost.\n",
-            last_word, item
+            last_word, word
         ).as_str();
 
-        last_word = item;
+        last_word = word;
     }
 
     proverb + format!("And all for the want of a {}.", list[0]).as_str()
